@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens
+ * -------------
+ * Components use the semantic utilities below (bg-canvas, text-ink, border-line,
+ * text-accent, font-display …). Their values come from --mode-* variables, which
+ * the career block below defines. To restyle the site, edit that block — no
+ * component changes needed.
+ *
+ * `inline` makes utilities reference var(--mode-*) directly, so a mode switch
+ * restyles everything without rebuilding CSS.
+ */
+@theme inline {
+  --color-canvas: var(--mode-canvas);
+  --color-surface: var(--mode-surface);
+  --color-raised: var(--mode-raised);
+  --color-line: var(--mode-line);
+  --color-ink: var(--mode-ink);
+  --color-muted: var(--mode-muted);
+  --color-accent: var(--mode-accent);
+  --color-accent-ink: var(--mode-accent-ink);
+
+  --font-sans: var(--mode-font-sans);
+  --font-display: var(--mode-font-display);
+}
+
+/* Mode-independent tokens */
+@theme {
+  --font-mono: ui-monospace, "SFMono-Regular", "Cascadia Code", Menlo, Consolas, monospace;
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --container-content: 76rem;
+  --container-prose: 40rem;
+
+  /* Type scale (≈ major third). Display sizes are fluid. */
+  --text-hero: clamp(2.5rem, 1.4rem + 4.2vw, 4.75rem);
+  --text-hero--line-height: 1.04;
+  --text-hero--letter-spacing: -0.03em;
+  --text-display: clamp(1.875rem, 1.35rem + 1.8vw, 2.75rem);
+  --text-display--line-height: 1.12;
+  --text-display--letter-spacing: -0.02em;
+  --text-lede: clamp(1.125rem, 1.05rem + 0.35vw, 1.3rem);
+  --text-lede--line-height: 1.6;
+
+  /* Review marker for [CONFIRM: …] placeholders — deliberately off-palette. */
+  --color-confirm: #f2a7d4;
+}
+
+/* Self-hosted variable fonts (only the subsets a page uses are downloaded). */
+:root {
+  --font-plex: "IBM Plex Sans Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --header-height: 4.5rem;
+}
+
+/* ---------- Mode: career (default) — blue-black slate, phosphor-teal accent ---------- */
+:root,
+:root[data-mode="career"] {
+  color-scheme: dark;
+  --mode-canvas: #0a0f14;
+  --mode-surface: #0e151c;
+  --mode-raised: #142029;
+  --mode-line: #1f2c38;
+  --mode-ink: #e6ebf0;
+  --mode-muted: #93a1ae;
+  --mode-accent: #6cc4d4;
+  --mode-accent-ink: #0a0f14;
+  --mode-font-sans: var(--font-plex);
+  --mode-font-display: var(--font-plex);
+}
+
+@layer base {
+  html {
+    background-color: var(--mode-canvas);
+    color: var(--mode-ink);
+    font-family: var(--mode-font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    min-height: 100dvh;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+
+  /* In-page anchors land below the sticky header. */
+  [id] {
+    scroll-margin-top: calc(var(--header-height) + 1rem);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--mode-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--mode-accent);
+    color: var(--mode-accent-ink);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/*
+ * Entrance motion. `.rise` children animate in sequence via --rise-delay.
+ * The reduced-motion rule below shortens these to an instant final state.
+ */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+@keyframes drop-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+@utility rise {
+  animation: rise 0.8s var(--ease-out-soft) both;
+  animation-delay: var(--rise-delay, 0ms);
+}
+
+@utility drop-in {
+  animation: drop-in 0.22s var(--ease-out-soft) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
