@@ -5,5 +5,6 @@ import { placeholderCheckPlugin } from './build/placeholder-check-plugin.ts';
 import { routeMetaPlugin } from './build/route-meta-plugin.ts';
 
 export default defineConfig({
+  base: '/portfolio/',
   plugins: [react(), tailwindcss(), routeMetaPlugin(), placeholderCheckPlugin()],
 });
