@@ -1,0 +1,3 @@
+# Netlify and Cloudflare Pages: send the bare domain to the career portfolio
+# with a real 301 (the app also redirects client-side, as a fallback).
+/  /career  301

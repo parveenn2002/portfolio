@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Placeholder mark: three connected nodes. Replace with your own. -->
+  <rect width="32" height="32" rx="7" fill="#0a0c0f"/>
+  <path d="M9 22 L16 9 L23 22 Z" fill="none" stroke="#6cc4d4" stroke-width="1.5" stroke-linejoin="round"/>
+  <circle cx="16" cy="9" r="2.6" fill="#e7eaee"/>
+  <circle cx="9" cy="22" r="2.6" fill="#6cc4d4"/>
+  <circle cx="23" cy="22" r="2.6" fill="#e7eaee"/>
+</svg>
