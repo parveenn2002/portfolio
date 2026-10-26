@@ -11,21 +11,21 @@ export const site: SiteConfig = {
   url: '', // [CONFIRM: production origin, e.g. https://parveen.dev — enables canonical/og:url]
 
   person: {
-    name: 'PARVEEN',
+    name: 'PARVEEN N',
   },
 
   contact: {
-    email: '[CONFIRM: PARVEEN’s public contact email]',
+    email: 'parveenn2002@gmail.com',
     whatsapp: '', // Optional: digits only with country code. Leave empty to hide.
   },
 
   links: {
-    github: '', // Optional: PARVEEN’s GitHub profile URL (https://…). Empty = hidden.
-    linkedin: '', // Optional: PARVEEN’s LinkedIn profile URL (https://…). Empty = hidden.
+    github: 'https://github.com/parveenn2002', // Optional: PARVEEN’s GitHub profile URL (https://…). Empty = hidden.
+    linkedin: 'https://linkedin.com/in/parveen-noordeen-aa98a533b', // Optional: PARVEEN’s LinkedIn profile URL (https://…). Empty = hidden.
   },
 
   resume: {
     path: '/resume/resume.pdf', // [CONFIRM: add PARVEEN’s resume PDF to public/resume/]
-    available: false,
+    available: true,
   },
 };

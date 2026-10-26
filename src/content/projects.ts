@@ -11,74 +11,123 @@ import type { Project, ProjectKind } from '../types/content.ts';
  * add links that are public.
  */
 export const projectKindLabels: Record<ProjectKind, { label: string; description: string }> = {
-  employment: {
-    label: 'Professional work',
-    description: 'Done as part of a job.',
+   employment: {
+    label: 'Industry Experience',
+    description: 'Projects developed and maintained in a professional work environment.',
   },
   'client-style': {
-    label: 'Client-style project',
-    description: 'Built to a real brief, as for a client.',
+    label: 'Business Solutions',
+    description: 'Applications designed to address specific business requirements.',
   },
   personal: {
-    label: 'Personal project',
-    description: 'Self-initiated.',
+    label: 'Independent Projects',
+    description: 'Projects developed independently to explore ideas and build practical solutions.',
   },
   practice: {
-    label: 'Practice project',
-    description: 'Built to learn a specific tool or technique.',
+    label: 'Technical Experiments',
+    description: 'Hands-on implementations created to strengthen technical skills and explore new technologies.',
   },
 };
 
 export const projects: Project[] = [
-  {
+ {
     id: 'laravel-app',
-    title: '[CONFIRM: project title — e.g. a Laravel web application]',
-    kind: '[CONFIRM: project type — professional, client-style, personal or practice]',
+    title: 'School ERP Management System',
+    kind: 'employment',
     status: 'complete',
-    summary: '[CONFIRM: one or two sentences on what the application does and who uses it]',
-    role: '[CONFIRM: what PARVEEN built or was responsible for]',
-    stack: ['PHP', 'Laravel', '[CONFIRM: other technologies used]'],
+    summary:
+      'A school management application designed to centralize student information and support administrative operations through organized ERP modules.',
+    role:
+      'Worked on backend development, student management functionality, CRUD operations, authentication, role-based access, database operations, and application maintenance.',
+    stack: [
+      'PHP',
+      'Laravel',
+      'MySQL',
+      'REST APIs',
+      'JavaScript',
+      'HTML',
+      'CSS',
+    ],
     links: [],
-    caseStudyId: 'laravel-app',
+    caseStudyId: 'school-erp',
   },
   {
     id: 'backend-api',
-    title: '[CONFIRM: project title — e.g. a backend API]',
-    kind: '[CONFIRM: project type — professional, client-style, personal or practice]',
+    title: 'Fintech PIVC Verification Platforms',
+    kind: 'employment',
     status: 'complete',
-    summary: '[CONFIRM: what the API provides and which applications use it]',
-    role: '[CONFIRM: PARVEEN’s role]',
-    stack: ['PHP', '[CONFIRM: framework and other technologies used]'],
+    summary:
+      'Worked on more than five Pre-Issuance Verification Call (PIVC) applications supporting customer verification, policy onboarding, consent capture, and insurance-related workflows for fintech clients.',
+    role:
+      'Developed and maintained Laravel REST APIs, implemented validations, integrated verification services, supported liveness and smile-detection workflows, tested APIs using Postman, and assisted with debugging and production releases.',
+    stack: [
+      'PHP',
+      'Laravel',
+      'MySQL',
+      'REST APIs',
+      'Postman',
+      'JavaScript',
+      'Third-party API Integration',
+    ],
     links: [],
+    caseStudyId: 'pivc-platform',
   },
   {
     id: 'database-app',
-    title: '[CONFIRM: project title — e.g. a database-driven application]',
-    kind: '[CONFIRM: project type — professional, client-style, personal or practice]',
+    title: 'Digital Visiting Card Platforms',
+    kind: 'employment',
     status: 'complete',
-    summary: '[CONFIRM: what data it manages and what the database work involved]',
-    role: '[CONFIRM: PARVEEN’s role]',
-    stack: ['PHP', '[CONFIRM: database technology, e.g. MySQL]'],
+    summary:
+      'Contributed to more than six Digital Visiting Card (DVC) platforms, including an LICHFL project involving over 2,000 customer digital cards. The applications supported customer data management and dynamic card presentation.',
+    role:
+      'Worked on PHP backend functionality, database operations, bulk Excel data imports, and integration with dynamic frontend components.',
+    stack: [
+      'PHP',
+      'Laravel',
+      'MySQL',
+      'JavaScript',
+      'Phaser',
+      'Excel Data Import',
+    ],
     links: [],
+    caseStudyId: 'digital-visiting-cards',
   },
   {
     id: 'server-work',
-    title: '[CONFIRM: project title — e.g. server setup, deployment or maintenance]',
-    kind: '[CONFIRM: project type — professional, client-style, personal or practice]',
+    title: 'Application Deployment and Production Support',
+    kind: 'employment',
     status: 'complete',
-    summary: '[CONFIRM: what was set up or maintained, described without internal details]',
-    role: '[CONFIRM: PARVEEN’s role]',
-    stack: ['[CONFIRM: server software and tools used]'],
+    summary:
+      'Supported application hosting, deployment, maintenance, and production releases for web applications hosted on GoDaddy.',
+    role:
+      'Handled deployment-related tasks, supported server and hosting configuration, investigated application issues, coordinated fixes, and assisted with release management and ongoing maintenance.',
+    stack: [
+      'GoDaddy',
+      'PHP',
+      'Laravel',
+      'MySQL',
+      'Git',
+      'Bitbucket',
+    ],
     links: [],
   },
   {
     id: 'ai-workflow',
-    title: '[CONFIRM: project title — e.g. an AI-assisted development workflow, or delete this entry]',
-    kind: '[CONFIRM: project type — professional, client-style, personal or practice]',
+    title: 'AI-Assisted Software Development Workflow',
+    kind: 'employment',
     status: 'complete',
-    summary: '[CONFIRM: how AI tools were used in the work and what they helped with]',
-    role: '[CONFIRM: PARVEEN’s role]',
-    stack: ['[CONFIRM: AI tools used]'],
+    summary:
+      'Used AI-assisted development tools to support software development tasks, including code generation, debugging, code improvement, documentation, and rapid prototyping.',
+    role:
+      'Used AI tools alongside PHP/Laravel development to explore implementation approaches, troubleshoot errors, improve existing code, and accelerate routine development tasks. AI tools supported the workflow rather than representing a separately verified AI product.',
+    stack: [
+      'ChatGPT',
+      'Claude',
+      'DeepSeek',
+      'Cursor',
+      'GitHub Copilot',
+      'Prompt Engineering',
+    ],
     links: [],
   },
 ];
